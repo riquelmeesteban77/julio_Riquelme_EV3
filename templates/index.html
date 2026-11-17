@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú principal</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0f172a;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            margin-bottom: 35px;
+            font-size: 26px;
+            letter-spacing: 0.5px;
+        }
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            align-items: center;
+        }
+
+        /* Contenedor relativo para posicionar el texto sobre la imagen */
+        .img-btn {
+            position: relative;
+            display: inline-block;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+
+        .img-btn img {
+            width: 240px; /* Ancho de la cápsula */
+            height: auto;
+            display: block;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+        }
+
+        /* Estilo y centrado del texto sobre el botón */
+        .img-btn span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6); /* Sombra para que resalte bien */
+            pointer-events: none; /* Para que el clic lo reciba siempre la imagen */
+        }
+
+        .img-btn:hover {
+            transform: scale(1.05); /* Efecto zoom suave al pasar el cursor */
+        }
+    </style>
+</head>
+<body>
+    <h1>Menú de Ejercicios</h1>
+    <div class="btn-container">
+        <!-- Botón con texto sobrepuesto 'Ejercicio 1' -->
+        <a href="/ejercicio1" class="img-btn">
+            <img src="{{ url_for('static', filename='img/imagen1.png') }}" alt="Ejercicio 1">
+            <span>Ejercicio 1</span>
+        </a>
+
+        <!-- Botón con texto sobrepuesto 'Ejercicio 2' -->
+        <a href="/ejercicio2" class="img-btn">
+            <img src="{{ url_for('static', filename='img/imagen2.png') }}" alt="Ejercicio 2">
+            <span>Ejercicio 2</span>
+        </a>
+    </div>
+</body>

@@ -1,0 +1,92 @@
+        /*
+            Contenedor :root se definen propiedades globales como el color de fondo (--bg-color), color de tarjetas (--card-bg) y color del texto (--text-color)
+            de esta manera se organiza mejor, ya que centraliza toda la configuración visual en un solo lugar, si en el futuro se desea cambiar algunos colores
+            solo se cambia en el contendor :root, no linea por linea en todo el archivo
+        */
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            width: 100%;
+            max-width: 400px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        /* Actua como una estructura invisible diseñada para mantener ordenada e input en el formulario */
+        .form-group {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+        /* Especifica tamaño de las caracteristicas de la etiqueta, como el margen inferior, el espesor y tamaño de la fuente */
+        label {
+            margin-bottom: 5px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        /*
+            Especifica el tamaño y/o color de las caracteristicas de las letras o numeros que escribamos en el formulario, como el color de la letra
+            tamaño de fuente, color de fuente, color de fondo del espacio donde escribimos, etc. Al estar especificado como type="text", si recibe números
+            los cuenta como caracteres y genera ningun error
+        */
+        input[type="text"] {
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #475569;
+            border-radius: 8px;
+            background: #0f172a;
+            color: white;
+        }
+        /* Especifica caracteristicas del boton que pulsamos para obtener resultados, como su ancho, transicion, espesor de fuente, tamaño de fuente, etc */
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #8b5cf6;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: #7c3aed;
+        }
+        .resultado {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 15px;
+            line-height: 1.6;
+            text-align: center;
+            background-color: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border: 1px solid #8b5cf6;
+            font-weight: bold;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #38bdf8;
+            font-size: 14px;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }

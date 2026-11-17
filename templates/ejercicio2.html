@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 - Nombres</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesejercicio2.css') }}">
+</head>
+<body>
+    <div class="card">
+        <h2>Comparador de Nombres</h2>
+        <form action="/ejercicio2" method="POST">
+            <div class="form-group">
+                <label for="nombre1">Nombre 1:</label>
+                <input type="text" id="nombre1" name="nombre1" required>
+            </div>
+            <div class="form-group">
+                <label for="nombre2">Nombre 2:</label>
+                <input type="text" id="nombre2" name="nombre2" required>
+            </div>
+            <div class="form-group">
+                <label for="nombre3">Nombre 3:</label>
+                <input type="text" id="nombre3" name="nombre3" required>
+            </div>
+            <button type="submit">Enviar / Procesar</button>
+        </form>
+
+        {% if resultado %}
+            {% if resultado.error %}
+                <p style="color: #f87171; text-align: center;">{{ resultado.error }}</p>
+            {% else %}
+                <div class="resultado">
+                    El nombre con mayor cantidad de caracteres es: {{ resultado.nombre_largo }}<br>
+                    El nombre tiene: {{ resultado.caracteres }} caracteres
+                </div>
+            {% endif %}
+        {% endif %}
+
+        <br>
+        <a href="/" class="back-link">← Volver al inicio</a>
+    </div>
+</body>
+</html>
